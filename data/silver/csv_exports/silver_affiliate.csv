@@ -1,0 +1,151 @@
+affiliate_id,affiliate_name,parent_id,state,program_tier_id_tier,bad_data_flag,unified_parent_id,normalized_name
+1001,North Judithbury Auto Body,,GA,5,False,1001.0,north judithbury auto body
+1002,Walker Collision Center,,FL,2,False,1002.0,walker collision center
+1003,Lake Joyside Auto Body,,TN,2,False,1003.0,lake joyside auto body
+1004,New Roberttown Auto Body,,GA,1,False,1004.0,new roberttown auto body
+1005,Davis Collision Center,,FL,1,False,1005.0,davis collision center
+1006,New Carolyn Auto Body,,AL,7,False,1006.0,new carolyn auto body
+1007,Hoffman Collision Center,,TN,5,False,1007.0,hoffman collision center
+1008,Robinsonshire Auto Body,,GA,3,False,1008.0,robinsonshire auto body
+1009,Lisatown Auto Body,,NC,5,False,1009.0,lisatown auto body
+1010,Blake Collision Center,,NC,2,False,1010.0,blake collision center
+1011,Moore Collision Center,,GA,6,False,1011.0,moore collision center
+1012,Petersonberg Auto Body,,TN,5,False,1012.0,petersonberg auto body
+1013,Port Matthew Auto Body,,AL,8,False,1013.0,port matthew auto body
+1014,South Colinstad Auto Body,,SC,2,False,1014.0,south colinstad auto body
+1015,Lindsaymouth Auto Body,,AL,6,False,1015.0,lindsaymouth auto body
+1016,South Christianport Auto Body,,AL,2,False,1016.0,south christianport auto body
+1017,Calderon Collision Center,,FL,5,False,1017.0,calderon collision center
+1018,Barbaraland Auto Body,,FL,2,False,1018.0,barbaraland auto body
+1019,Lake Jeremyport Auto Body,,SC,6,False,1019.0,lake jeremyport auto body
+1020,Galloway Collision Center,,NC,4,False,1020.0,galloway collision center
+1021,Port Craig Auto Body,5002.0,AL,2,False,5002.0,port craig auto body
+1022,Shawnstad Auto Body,5001.0,FL,3,False,5001.0,shawnstad auto body
+1023,West Michael Auto Body,5003.0,AL,4,False,5003.0,west michael auto body
+1024,Jacquelineland Auto Body,5002.0,GA,4,False,5002.0,jacquelineland auto body
+1025,New Jessica Auto Body,,SC,5,False,1025.0,new jessica auto body
+1026,Martin Collision Center,,TN,6,False,1026.0,martin collision center
+1027,Nelsonside Auto Body,5001.0,SC,8,False,5001.0,nelsonside auto body
+1028,Robinson Collision Center,5001.0,FL,5,False,5001.0,robinson collision center
+1029,Meganton Auto Body,5003.0,SC,6,False,5003.0,meganton auto body
+1030,Port Antonio Auto Body,5001.0,FL,8,False,5001.0,port antonio auto body
+1031,Richardland Auto Body,,GA,3,False,1031.0,richardland auto body
+1032,New Nancy Auto Body,5001.0,SC,2,False,5001.0,new nancy auto body
+1033,Jasonfort Auto Body,5003.0,SC,5,False,5003.0,jasonfort auto body
+1034,Wilkersonmouth Auto Body,,GA,5,False,1034.0,wilkersonmouth auto body
+1035,Thomas Collision Center,5002.0,SC,3,False,5002.0,thomas collision center
+1036,Taylor Collision Center,5003.0,AL,5,False,5003.0,taylor collision center
+1037,Juliechester Auto Body,5001.0,GA,5,False,5001.0,juliechester auto body
+1038,Hurst Collision Center,5001.0,FL,1,False,5001.0,hurst collision center
+1039,Coxberg Auto Body,5002.0,GA,6,False,5002.0,coxberg auto body
+1040,Hicks Collision Center,5002.0,FL,2,False,5002.0,hicks collision center
+1041,Port Brandonville Auto Body,,GA,3,False,1041.0,port brandonville auto body
+1042,Lake Ernest Auto Body,5001.0,TN,3,False,5001.0,lake ernest auto body
+1043,Carlsonfurt Auto Body,5002.0,TN,7,False,5002.0,carlsonfurt auto body
+1044,Carlsonmouth Auto Body,5001.0,AL,4,False,5001.0,carlsonmouth auto body
+1045,Tashatown Auto Body,5002.0,AL,6,False,5002.0,tashatown auto body
+1046,Lake Nicoleview Auto Body,5003.0,SC,2,False,5003.0,lake nicoleview auto body
+1047,Mack Collision Center,5001.0,NC,1,False,5001.0,mack collision center
+1048,Danielchester Auto Body,5001.0,GA,2,False,5001.0,danielchester auto body
+1049,Moore Collision Center,,GA,6,False,1049.0,moore collision center
+1050,Lake Nancyview Auto Body,,NC,8,False,1050.0,lake nancyview auto body
+1051,New Rita Auto Body,5001.0,AL,8,False,5001.0,new rita auto body
+1052,Meaganhaven Auto Body,5001.0,SC,4,False,5001.0,meaganhaven auto body
+1053,Lynch Collision Center,,SC,6,False,1053.0,lynch collision center
+1054,West Kathryn Auto Body,5003.0,AL,1,False,5003.0,west kathryn auto body
+1055,Ryan Collision Center,,AL,6,False,1055.0,ryan collision center
+1056,Osborne Collision Center,,FL,8,False,1056.0,osborne collision center
+1057,New Mariotown Auto Body,5001.0,NC,8,False,5001.0,new mariotown auto body
+1058,West Natashaport Auto Body,5001.0,GA,8,False,5001.0,west natashaport auto body
+1059,Allen Collision Center,,TN,1,False,1059.0,allen collision center
+1060,New Stacey Auto Body,,FL,3,False,1060.0,new stacey auto body
+1061,Lake Toddland Auto Body,5003.0,FL,7,False,5003.0,lake toddland auto body
+1062,Spence Collision Center,,GA,7,False,1062.0,spence collision center
+1063,East Donna Auto Body,5002.0,SC,5,False,5002.0,east donna auto body
+1064,West Allison Auto Body,5003.0,AL,8,False,5003.0,west allison auto body
+1065,Obrien Collision Center,5001.0,FL,1,False,5001.0,obrien collision center
+1066,New Karina Auto Body,,GA,1,False,1066.0,new karina auto body
+1067,Lake Larry Auto Body,5003.0,TN,3,False,5003.0,lake larry auto body
+1068,Samuelhaven Auto Body,,GA,3,False,1068.0,samuelhaven auto body
+1069,Martinezbury Auto Body,,AL,4,False,1069.0,martinezbury auto body
+1070,Brown Collision Center,5003.0,TN,4,False,5003.0,brown collision center
+1071,New Angelashire Auto Body,,SC,6,False,1071.0,new angelashire auto body
+1072,Robinson Collision Center,5002.0,AL,6,False,5002.0,robinson collision center
+1073,Jones Collision Center,5001.0,FL,5,False,5001.0,jones collision center
+1074,East Carloston Auto Body,5003.0,GA,1,False,5003.0,east carloston auto body
+1075,Chadbury Auto Body,5003.0,TN,2,False,5003.0,chadbury auto body
+1076,Elizabethborough Auto Body,,TN,5,False,1076.0,elizabethborough auto body
+1077,Lake Selena Auto Body,5001.0,GA,4,False,5001.0,lake selena auto body
+1078,Duncan Collision Center,5002.0,SC,5,False,5002.0,duncan collision center
+1079,Sanchezfort Auto Body,,TN,5,False,1079.0,sanchezfort auto body
+1080,Leeville Auto Body,,FL,5,False,1080.0,leeville auto body
+1081,Gomezchester Auto Body,,AL,3,False,1081.0,gomezchester auto body
+1082,Owens Collision Center,5002.0,FL,6,False,5002.0,owens collision center
+1083,Lake Deniseville Auto Body,5001.0,NC,8,False,5001.0,lake deniseville auto body
+1084,South Jessicaville Auto Body,5002.0,GA,2,False,5002.0,south jessicaville auto body
+1085,East James Auto Body,5003.0,GA,1,False,5003.0,east james auto body
+1086,Taylorburgh Auto Body,5002.0,AL,5,False,5002.0,taylorburgh auto body
+1087,Stevenland Auto Body,5001.0,TN,7,False,5001.0,stevenland auto body
+1088,Ramos Collision Center,,AL,3,False,1088.0,ramos collision center
+1089,North Deniseside Auto Body,,TN,3,False,1089.0,north deniseside auto body
+1090,Huff Collision Center,5003.0,NC,6,False,5003.0,huff collision center
+1091,Port Melindaburgh Auto Body,,FL,4,False,1091.0,port melindaburgh auto body
+1092,Tuckerborough Auto Body,,TN,7,False,1092.0,tuckerborough auto body
+1093,Barreraburgh Auto Body,5001.0,FL,3,False,5001.0,barreraburgh auto body
+1094,Smithfurt Auto Body,5001.0,GA,3,False,5001.0,smithfurt auto body
+1095,Saramouth Auto Body,5002.0,SC,4,False,5002.0,saramouth auto body
+1096,Mitchell Collision Center,5002.0,AL,2,False,5002.0,mitchell collision center
+1097,Mooreport Auto Body,5003.0,SC,4,False,5003.0,mooreport auto body
+1098,North Beth Auto Body,5001.0,SC,6,False,5001.0,north beth auto body
+1099,Lake Leeton Auto Body,5002.0,FL,4,False,5002.0,lake leeton auto body
+1100,Shawhaven Auto Body,,SC,6,False,1100.0,shawhaven auto body
+1101,North Susan Auto Body,5002.0,NC,6,False,5002.0,north susan auto body
+1102,Port Jacobland Auto Body,5003.0,TN,6,False,5003.0,port jacobland auto body
+1103,Leonard Collision Center,,NC,3,False,1103.0,leonard collision center
+1104,Young Collision Center,5002.0,TN,7,False,5002.0,young collision center
+1105,New Johnton Auto Body,5002.0,NC,7,False,5002.0,new johnton auto body
+1106,South Dianeshire Auto Body,,TN,4,False,1106.0,south dianeshire auto body
+1107,Mills Collision Center,5002.0,SC,1,False,5002.0,mills collision center
+1108,Jamesmouth Auto Body,5001.0,GA,6,False,5001.0,jamesmouth auto body
+1109,West Randy Auto Body,5002.0,GA,5,False,5002.0,west randy auto body
+1110,Stephenland Auto Body,5002.0,NC,7,False,5002.0,stephenland auto body
+1111,South Christineshire Auto Body,5002.0,FL,7,False,5002.0,south christineshire auto body
+1112,North Amandahaven Auto Body,5003.0,FL,5,False,5003.0,north amandahaven auto body
+1113,Davidstad Auto Body,5003.0,GA,5,False,5003.0,davidstad auto body
+1114,Ibarra Collision Center,5002.0,TN,6,False,5002.0,ibarra collision center
+1115,West Justin Auto Body,5003.0,AL,4,False,5003.0,west justin auto body
+1116,Bassport Auto Body,5003.0,AL,3,False,5003.0,bassport auto body
+1117,Carr Collision Center,,AL,6,False,1117.0,carr collision center
+1118,Lake Lisaport Auto Body,,FL,5,False,1118.0,lake lisaport auto body
+1119,East Josephville Auto Body,5001.0,FL,1,False,5001.0,east josephville auto body
+1120,Newton Collision Center,,SC,2,False,1120.0,newton collision center
+1121,West Juan Auto Body,5003.0,AL,4,False,5003.0,west juan auto body
+1122,Lake Matthew Auto Body,5003.0,FL,3,False,5003.0,lake matthew auto body
+1123,Williamview Auto Body,,GA,7,False,1123.0,williamview auto body
+1124,Whitehead Collision Center,5001.0,AL,8,False,5001.0,whitehead collision center
+1125,North Cynthiaview Auto Body,,GA,8,False,1125.0,north cynthiaview auto body
+1126,North Matthewberg Auto Body,5001.0,AL,6,False,5001.0,north matthewberg auto body
+1127,Evanmouth Auto Body,5003.0,AL,7,False,5003.0,evanmouth auto body
+1128,Hoffmanville Auto Body,5003.0,AL,8,False,5003.0,hoffmanville auto body
+1129,Jones Collision Center,5003.0,FL,5,False,5003.0,jones collision center
+1130,New Barry Auto Body,5003.0,NC,8,False,5003.0,new barry auto body
+1131,Brandiberg Auto Body,,FL,5,False,1131.0,brandiberg auto body
+1132,Andersonport Auto Body,5002.0,TN,2,False,5002.0,andersonport auto body
+1133,Diaz Collision Center,5001.0,SC,3,False,5001.0,diaz collision center
+1134,Fitzpatrick Collision Center,5001.0,SC,6,False,5001.0,fitzpatrick collision center
+1135,West Jasonbury Auto Body,5003.0,FL,7,False,5003.0,west jasonbury auto body
+1136,West Kimberlychester Auto Body,5003.0,TN,1,False,5003.0,west kimberlychester auto body
+1137,East Michelle Auto Body,5003.0,NC,5,False,5003.0,east michelle auto body
+1138,South Angel Auto Body,5003.0,SC,4,False,5003.0,south angel auto body
+1139,Doyle Collision Center,5003.0,SC,8,False,5003.0,doyle collision center
+1140,Kimberlychester Auto Body,,AL,7,False,1140.0,kimberlychester auto body
+1141,West Erik Auto Body,5001.0,FL,1,False,5001.0,west erik auto body
+1142,South Monicafort Auto Body,5003.0,AL,1,False,5003.0,south monicafort auto body
+1143,East Lisa Auto Body,,FL,8,False,1143.0,east lisa auto body
+1144,Stevens Collision Center,5001.0,SC,6,False,5001.0,stevens collision center
+1145,Loribury Auto Body,5001.0,NC,7,False,5001.0,loribury auto body
+1146,North Donna Auto Body,5002.0,SC,5,False,5002.0,north donna auto body
+1147,Murphyland Auto Body,,AL,1,False,1147.0,murphyland auto body
+1148,Rasmussen Collision Center,5002.0,GA,1,False,5002.0,rasmussen collision center
+1149,Michaelhaven Auto Body,,FL,1,False,1149.0,michaelhaven auto body
+1150,Ross Collision Center,5001.0,SC,2,False,5001.0,ross collision center

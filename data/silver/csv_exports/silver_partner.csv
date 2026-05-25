@@ -1,0 +1,6 @@
+partner_id,partner_name,partner_type,bad_data_flag
+101,Apex Supply Co,National,False
+102,Matrix Parts Group,Regional,False
+103,Vertex Finishings,National,False
+104,Beacon Materials,Specialty,False
+105,Titan Logistics,Regional,False

@@ -1,0 +1,151 @@
+affiliate_id,affiliate_name,parent_id,state,program_tier_id_tier
+1001,North Judithbury Auto Body,,GA,5
+1002,Walker Collision Center,,FL,2
+1003,Lake Joyside Auto Body,,TN,2
+1004,New Roberttown Auto Body,,GA,1
+1005,Davis Collision Center,,FL,1
+1006,New Carolyn Auto Body,,AL,7
+1007,Hoffman Collision Center,,TN,5
+1008,Robinsonshire Auto Body,,GA,3
+1009,Lisatown Auto Body,,NC,5
+1010,Blake Collision Center,,NC,2
+1011,Moore Collision Center,,GA,6
+1012,Petersonberg Auto Body,,TN,5
+1013,Port Matthew Auto Body,,AL,8
+1014,South Colinstad Auto Body,,SC,2
+1015,Lindsaymouth Auto Body,,AL,6
+1016,South Christianport Auto Body,,AL,2
+1017,Calderon Collision Center,,FL,5
+1018,Barbaraland Auto Body,,FL,2
+1019,Lake Jeremyport Auto Body,,SC,6
+1020,Galloway Collision Center,,NC,4
+1021,Port Craig Auto Body,5002.0,AL,2
+1022,Shawnstad Auto Body,5001.0,FL,3
+1023,West Michael Auto Body,5003.0,AL,4
+1024,Jacquelineland Auto Body,5002.0,GA,4
+1025,New Jessica Auto Body,,SC,5
+1026,Martin Collision Center,,TN,6
+1027,Nelsonside Auto Body,5001.0,SC,8
+1028,Robinson Collision Center,5001.0,FL,5
+1029,Meganton Auto Body,5003.0,SC,6
+1030,Port Antonio Auto Body,5001.0,FL,8
+1031,Richardland Auto Body,,GA,3
+1032,New Nancy Auto Body,5001.0,SC,2
+1033,Jasonfort Auto Body,5003.0,SC,5
+1034,Wilkersonmouth Auto Body,,GA,5
+1035,Thomas Collision Center,5002.0,SC,3
+1036,Taylor Collision Center,5003.0,AL,5
+1037,Juliechester Auto Body,5001.0,GA,5
+1038,Hurst Collision Center,5001.0,FL,1
+1039,Coxberg Auto Body,5002.0,GA,6
+1040,Hicks Collision Center,5002.0,FL,2
+1041,Port Brandonville Auto Body,,GA,3
+1042,Lake Ernest Auto Body,5001.0,TN,3
+1043,Carlsonfurt Auto Body,5002.0,TN,7
+1044,Carlsonmouth Auto Body,5001.0,AL,4
+1045,Tashatown Auto Body,5002.0,AL,6
+1046,Lake Nicoleview Auto Body,5003.0,SC,2
+1047,Mack Collision Center,5001.0,NC,1
+1048,Danielchester Auto Body,5001.0,GA,2
+1049,Moore Collision Center,,GA,6
+1050,Lake Nancyview Auto Body,,NC,8
+1051,New Rita Auto Body,5001.0,AL,8
+1052,Meaganhaven Auto Body,5001.0,SC,4
+1053,Lynch Collision Center,,SC,6
+1054,West Kathryn Auto Body,5003.0,AL,1
+1055,Ryan Collision Center,,AL,6
+1056,Osborne Collision Center,,FL,8
+1057,New Mariotown Auto Body,5001.0,NC,8
+1058,West Natashaport Auto Body,5001.0,GA,8
+1059,Allen Collision Center,,TN,1
+1060,New Stacey Auto Body,,FL,3
+1061,Lake Toddland Auto Body,5003.0,FL,7
+1062,Spence Collision Center,,GA,7
+1063,East Donna Auto Body,5002.0,SC,5
+1064,West Allison Auto Body,5003.0,AL,8
+1065,Obrien Collision Center,5001.0,FL,1
+1066,New Karina Auto Body,,GA,1
+1067,Lake Larry Auto Body,5003.0,TN,3
+1068,Samuelhaven Auto Body,,GA,3
+1069,Martinezbury Auto Body,,AL,4
+1070,Brown Collision Center,5003.0,TN,4
+1071,New Angelashire Auto Body,,SC,6
+1072,Robinson Collision Center,5002.0,AL,6
+1073,Jones Collision Center,5001.0,FL,5
+1074,East Carloston Auto Body,5003.0,GA,1
+1075,Chadbury Auto Body,5003.0,TN,2
+1076,Elizabethborough Auto Body,,TN,5
+1077,Lake Selena Auto Body,5001.0,GA,4
+1078,Duncan Collision Center,5002.0,SC,5
+1079,Sanchezfort Auto Body,,TN,5
+1080,Leeville Auto Body,,FL,5
+1081,Gomezchester Auto Body,,AL,3
+1082,Owens Collision Center,5002.0,FL,6
+1083,Lake Deniseville Auto Body,5001.0,NC,8
+1084,South Jessicaville Auto Body,5002.0,GA,2
+1085,East James Auto Body,5003.0,GA,1
+1086,Taylorburgh Auto Body,5002.0,AL,5
+1087,Stevenland Auto Body,5001.0,TN,7
+1088,Ramos Collision Center,,AL,3
+1089,North Deniseside Auto Body,,TN,3
+1090,Huff Collision Center,5003.0,NC,6
+1091,Port Melindaburgh Auto Body,,FL,4
+1092,Tuckerborough Auto Body,,TN,7
+1093,Barreraburgh Auto Body,5001.0,FL,3
+1094,Smithfurt Auto Body,5001.0,GA,3
+1095,Saramouth Auto Body,5002.0,SC,4
+1096,Mitchell Collision Center,5002.0,AL,2
+1097,Mooreport Auto Body,5003.0,SC,4
+1098,North Beth Auto Body,5001.0,SC,6
+1099,Lake Leeton Auto Body,5002.0,FL,4
+1100,Shawhaven Auto Body,,SC,6
+1101,North Susan Auto Body,5002.0,NC,6
+1102,Port Jacobland Auto Body,5003.0,TN,6
+1103,Leonard Collision Center,,NC,3
+1104,Young Collision Center,5002.0,TN,7
+1105,New Johnton Auto Body,5002.0,NC,7
+1106,South Dianeshire Auto Body,,TN,4
+1107,Mills Collision Center,5002.0,SC,1
+1108,Jamesmouth Auto Body,5001.0,GA,6
+1109,West Randy Auto Body,5002.0,GA,5
+1110,Stephenland Auto Body,5002.0,NC,7
+1111,South Christineshire Auto Body,5002.0,FL,7
+1112,North Amandahaven Auto Body,5003.0,FL,5
+1113,Davidstad Auto Body,5003.0,GA,5
+1114,Ibarra Collision Center,5002.0,TN,6
+1115,West Justin Auto Body,5003.0,AL,4
+1116,Bassport Auto Body,5003.0,AL,3
+1117,Carr Collision Center,,AL,6
+1118,Lake Lisaport Auto Body,,FL,5
+1119,East Josephville Auto Body,5001.0,FL,1
+1120,Newton Collision Center,,SC,2
+1121,West Juan Auto Body,5003.0,AL,4
+1122,Lake Matthew Auto Body,5003.0,FL,3
+1123,Williamview Auto Body,,GA,7
+1124,Whitehead Collision Center,5001.0,AL,8
+1125,North Cynthiaview Auto Body,,GA,8
+1126,North Matthewberg Auto Body,5001.0,AL,6
+1127,Evanmouth Auto Body,5003.0,AL,7
+1128,Hoffmanville Auto Body,5003.0,AL,8
+1129,Jones Collision Center,5003.0,FL,5
+1130,New Barry Auto Body,5003.0,NC,8
+1131,Brandiberg Auto Body,,FL,5
+1132,Andersonport Auto Body,5002.0,TN,2
+1133,Diaz Collision Center,5001.0,SC,3
+1134,Fitzpatrick Collision Center,5001.0,SC,6
+1135,West Jasonbury Auto Body,5003.0,FL,7
+1136,West Kimberlychester Auto Body,5003.0,TN,1
+1137,East Michelle Auto Body,5003.0,NC,5
+1138,South Angel Auto Body,5003.0,SC,4
+1139,Doyle Collision Center,5003.0,SC,8
+1140,Kimberlychester Auto Body,,AL,7
+1141,West Erik Auto Body,5001.0,FL,1
+1142,South Monicafort Auto Body,5003.0,AL,1
+1143,East Lisa Auto Body,,FL,8
+1144,Stevens Collision Center,5001.0,SC,6
+1145,Loribury Auto Body,5001.0,NC,7
+1146,North Donna Auto Body,5002.0,SC,5
+1147,Murphyland Auto Body,,AL,1
+1148,Rasmussen Collision Center,5002.0,GA,1
+1149,Michaelhaven Auto Body,,FL,1
+1150,Ross Collision Center,5001.0,SC,2

@@ -1,0 +1,164 @@
+{
+  "name": "Ecclesia_Rebate_Analytics_Theme",
+  "dataColors": [
+    "#00909e",
+    "#00b4c5",
+    "#0f1e35",
+    "#162840",
+    "#cde8ec",
+    "#ede8de"
+  ],
+  "background": "#f5f0e8",
+  "foreground": "#1a2a3a",
+  "tableAccent": "#00b4c5",
+
+  "visualStyles": {
+    "*": {
+      "*": {
+        "general": [
+          {
+            "transparency": 0
+          }
+        ]
+      }
+    },
+
+    "card": {
+      "*": {
+        "card": [
+          {
+            "background": {
+              "solid": { "color": "#0f1e35" }
+            },
+            "padding": 20,
+            "cornerRadius": 4
+          }
+        ],
+        "calloutValue": [
+          {
+            "color": {
+              "solid": { "color": "#ffffff" }
+            },
+            "fontFamily": "Georgia",
+            "fontSize": 32
+          }
+        ],
+        "categoryLabel": [
+          {
+            "color": {
+              "solid": { "color": "#00b4c5" }
+            },
+            "fontFamily": "Consolas",
+            "fontSize": 12,
+            "wordWrap": true
+          }
+        ]
+      }
+    },
+
+    "multiRowCard": {
+      "*": {
+        "cards": [
+          {
+            "padding": 20,
+            "cornerRadius": 4,
+            "background": {
+              "solid": { "color": "#0f1e35" }
+            }
+          }
+        ]
+      }
+    },
+
+    "barChart": {
+      "*": {
+        "dataPoint": [
+          {
+            "defaultColor": {
+              "solid": { "color": "#00909e" }
+            }
+          }
+        ],
+        "categoryAxis": [
+          {
+            "labelColor": {
+              "solid": { "color": "#1a2a3a" }
+            },
+            "fontFamily": "Segoe UI",
+            "fontSize": 12
+          }
+        ],
+        "valueAxis": [
+          {
+            "labelColor": {
+              "solid": { "color": "#1a2a3a" }
+            },
+            "fontFamily": "Segoe UI",
+            "fontSize": 12
+          }
+        ],
+        "title": [
+          {
+            "color": {
+              "solid": { "color": "#0f1e35" }
+            },
+            "fontFamily": "Georgia",
+            "fontSize": 18
+          }
+        ]
+      }
+    },
+
+    "lineChart": {
+      "*": {
+        "dataPoint": [
+          {
+            "lineColor": {
+              "solid": { "color": "#00b4c5" }
+            },
+            "markerColor": {
+              "solid": { "color": "#00909e" }
+            }
+          }
+        ],
+        "plotArea": [
+          {
+            "background": {
+              "solid": { "color": "#ede8de" }
+            }
+          }
+        ],
+        "categoryAxis": [
+          {
+            "labelColor": {
+              "solid": { "color": "#1a2a3a" }
+            },
+            "fontFamily": "Segoe UI",
+            "fontSize": 12
+          }
+        ],
+        "valueAxis": [
+          {
+            "labelColor": {
+              "solid": { "color": "#1a2a3a" }
+            },
+            "gridlineColor": {
+              "solid": { "color": "#d0dce0" }
+            },
+            "fontFamily": "Segoe UI",
+            "fontSize": 12
+          }
+        ],
+        "title": [
+          {
+            "color": {
+              "solid": { "color": "#0f1e35" }
+            },
+            "fontFamily": "Georgia",
+            "fontSize": 18
+          }
+        ]
+      }
+    }
+  }
+}
