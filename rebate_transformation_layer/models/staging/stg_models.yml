@@ -1,0 +1,56 @@
+version: 2
+
+models:
+  - name: stg_transactions
+    description: "Staging view for raw rebate transactions. Casts datatypes and normalizes fields."
+    columns:
+      - name: transaction_id
+        description: "Primary key identifier for the transaction."
+        tests:
+          - unique
+          - not_null
+      - name: affiliate_id
+        description: "Foreign key pointing to the affiliate dimension map."
+        tests:
+          - not_null
+          - relationships:
+              to: source('bronze_source', 'synthetic_dim_affiliate')
+              field: affiliate_id
+      - name: partner_id
+        description: "Foreign key pointing to the partner organization."
+      - name: transaction_date
+        description: "The explicit calendar date the transaction occurred."
+      - name: memo
+        description: "Text descriptor or notes associated with the transaction feed."
+      - name: net_amount
+        description: "The raw financial value of the transaction, cast to decimal."
+
+  - name: stg_affiliates
+    description: "Staging view for affiliate metadata, tracking program tiers."
+    columns:
+      - name: affiliate_id
+        description: "Primary key for the affiliate."
+        tests:
+          - unique
+          - not_null
+      - name: affiliate_name
+        description: "The legal name of the affiliate organization."
+      - name: parent_id
+        description: "Parent company identifier if applicable."
+      - name: state
+        description: "US State abbreviation of company operation."
+      - name: program_tier
+        description: "Cleaned program tier level designation."
+
+  - name: stg_partners
+    description: "Staging view for partner dimensions and clearing house alignments."
+    columns:
+      - name: partner_id
+        description: "Primary key for the partner organization."
+        tests:
+          - unique
+          - not_null
+      - name: partner_name
+        description: "Descriptive name of the partner clearing house."
+      - name: partner_type
+        description: "National, regional, specialty, etc, partner identifier."

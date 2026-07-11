@@ -1,0 +1,33 @@
+version: 2
+
+sources:
+  - name: bronze_source
+    database: DEV_MCP_DB
+    schema: PUBLIC
+    description: "raw synthetic rebate data inegsted directly from the local bronze CSV files."
+    tables:
+      - name: synthetic_fact_rebate
+        description: "The core transactional ledger containing raw rebate records, transaction IDs, and amounts."
+        columns:
+          - name: transaction_id
+            description: "Primary key identifier for the transaction"
+            tests:
+              - not_null
+      
+      - name: synthetic_dim_affiliate
+        description: "Dimension table mapping affiliate IDs to their respective attributes."
+        columns:
+          - name: affiliate_id
+            description: "Primary key for the affiliate"
+            tests:
+              - not_null
+          - name: program_tier
+            description: "Cleaned program tier level designation"
+
+      - name: synthetic_dim_partner
+        description: "Dimension table defining partner IDs and corporate metadata."
+        columns:
+          - name: partner_id
+            description: "Primary key for the partner organization"
+            tests:
+              - not_null
