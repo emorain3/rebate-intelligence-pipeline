@@ -1,0 +1,39 @@
+version: 2
+
+models:
+  - name: int_rebates
+    description: "Silver intermediate layer applying composite key deduplication and exception profiling."
+    columns:
+      - name: unique_key
+        description: "Generated MD5-coalesced composite primary key guaranteeing true uniqueness at the grain of: transaction, partner, and memo."
+        tests:
+          - unique
+          - not_null
+      - name: exception_type
+        description: "Categorical exception flags indicating the exact data anomaly detected (e.g., zero_amount, null_memo)."
+      - name: is_exception
+        description: "Boolean indicator flagging whether the row contains an anomaly or not."
+
+  - name: int_affiliates
+    description: "Intermediate layer for affiliate dimension data applying text trimming and capitalization standardization."
+    columns:
+      - name: affiliate_id
+        description: "Primary key identifier for the affiliate location."
+        tests:
+          - unique
+          - not_null
+      - name: affiliate_name
+        description: "Cleaned, standardized, and uppercase affiliate business name."
+      - name: program_tier
+        description: "Standardized uppercase vendor contract tier classification."
+
+  - name: int_partners
+    description: "Intermediate layer for partner dimension data applying text trimming and capitalization standardization."
+    columns:
+      - name: partner_id
+        description: "Primary key identifier for the core parent partner entity."
+        tests:
+          - unique
+          - not_null
+      - name: partner_name
+        description: "Cleaned, standardized, and uppercase corporate partner entity name."

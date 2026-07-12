@@ -1,15 +1,6 @@
-Welcome to your new dbt project!
+Current Pipeline Progress
 
-### Using the starter project
-
-Try running the following commands:
-- dbt run
-- dbt test
-
-
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [chat](https://community.getdbt.com/) on Slack for live discussions and support
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+- [x] **Phase 1: Ingestion & Environment** - Raw datasets successfully structured in Snowflake (`DEV_MCP_DB.PUBLIC`).
+- [x] **Phase 2: dbt Core Initialization** - Project structure, profiles, and initial connection gates validated.
+- [x] **Phase 3 (Part A): Staging Layer (Bronze)** - Type-casting, column normalizations, and initial single-column validation rules applied.
+- [x] **Phase 3 (Part B): Intermediate Layer (Silver)** - Composite MD5 surrogate keys built, row-number window deduplication implemented, and silent shop anomaly tracking flags mapped.
