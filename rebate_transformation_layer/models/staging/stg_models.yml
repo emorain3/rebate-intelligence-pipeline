@@ -3,11 +3,16 @@ version: 2
 models:
   - name: stg_transactions
     description: "Staging view for raw rebate transactions. Casts datatypes and normalizes fields."
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - transaction_id
+            - partner_id
+            - memo
     columns:
       - name: transaction_id
         description: "Primary key identifier for the transaction."
         tests:
-          - unique
           - not_null
       - name: affiliate_id
         description: "Foreign key pointing to the affiliate dimension map."

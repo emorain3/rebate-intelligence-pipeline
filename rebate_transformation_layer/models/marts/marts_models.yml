@@ -1,0 +1,39 @@
+version: 2
+
+models:
+  - name: dim_partners
+    description: "Gold dimension table consolidating the standardized partner and affiliate details."
+    columns:
+      - name: affiliate_id
+        description: "Primary key identifier for the affiliate location."
+        tests:
+          - unique
+          - not_null
+      - name: affiliate_name
+        description: "Cleaned and standardized uppercase affiliate name."
+
+  - name: fact_rebate_payouts
+    description: "Gold fact table containing validated, deduplicated rebate transactions cleared of all flagged anomalies."
+    columns:
+      - name: rebate_payout_id
+        description: "Primary key hash for the individual transaction payout."
+        tests:
+          - unique
+          - not_null
+      - name: affiliate_id
+        description: "Foreign key linking back to dim_partners dimension table."
+        tests:
+          - relationships:
+              to: ref('dim_partners')
+              field: affiliate_id
+
+  - name: mart_affiliate_summary
+    description: "Analytical summary mart evaluating transaction health and explicitly identifying silent shop entities among other anomalies."
+    columns:
+      - name: affiliate_id
+        description: "Primary key grouping column for individual affiliates."
+        tests:
+          - unique
+          - not_null
+      - name: is_silent_shop
+        description: "Flag indicating whether the location has generated zero clean transactions."

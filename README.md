@@ -1,363 +1,96 @@
-# Enterprise Collision Network (ECN) — Rebate Intelligence & Data Quality Monitoring Case Study
+# Rebate Intelligence Pipeline
 
-## Overview
+An end-to-end data engineering portfolio project demonstrating production-grade pipeline design, anomaly detection, and exception monitoring across two implementation paradigms.
 
-This project is a business-focused **data engineering and analytics case study** centered around modernizing rebate monitoring operations for a fictional organization: **Enterprise Collision Network (ECN)**.
+📄 **[View the full case study →](https://emorain3.github.io/rebate-intelligence-pipeline-casestudy/)**
 
-The solution was originally designed as a proof-of-concept architecture for a collision repair network operating within a distributor-rebate ecosystem. The objective was to demonstrate my solution-mindedness, systems thinking, and technical ability through a real-world operational problem.
-
-I identified the need for this data infrastructure as a direct improvement of:
-
-* operational trust
-* rebate visibility
-* anomaly detection
-* reporting accuracy
-* scalability
-* business intelligence enablement ← (*this was a major operational gap for this team without a dedicated data engineering function*)
-
-The project demonstrates how modern data engineering practices can help organizations move away from ***reactive*** spreadsheet-driven operations toward ***proactive***, analytics-driven decision making.
+> **Privacy Note:** All data in this repository is fully synthesized. The original dataset was anonymized and resampled to protect the privacy of the source organization and any identifying business information. Findings such as silent shop counts reflect the resampled data and may differ from figures referenced in the original case study presentation.
 
 ---
 
-# Business Problem
+## What This Project Demonstrates
 
-ECN relied heavily on manual rebate reconciliation processes across distributor-submitted transaction files.
-
-The core challenge was “bad data, but even moreso the challenge was to mitigate the erosion of trust between:
-
-* affiliates
-* distributors
-* operations teams
-* leadership stakeholders
-
-Manual workflows made it difficult to:
-
-* identify missing expected activity
-* detect reporting inconsistencies
-* validate rebate integrity
-* surface operational risks quickly
-* scale business intelligence efforts effectively
-
-This project was designed to demonstrate how automated monitoring, layered architecture, and exception-driven reporting could both (a) help reduce those risks, and (b) improve operational visibility.
+- Medallion Architecture (Bronze / Silver / Gold) implemented across two technology paradigms
+- Composite key deduplication and row-level exception classification in dbt
+- Silent shop detection encoded as a testable dbt data contract with a custom singular test
+- Architectural decision-making: when to choose Microsoft Fabric vs. Snowflake + dbt
 
 ---
 
-# Quick Project Snapshot
+## Stack
 
-| Category      | Details                                                      |
-| ------------- | ------------------------------------------------------------ |
-| Project Type  | Data Engineering / BI Case Study                             |
-| Architecture  | Bronze → Silver → Gold Medallion                             |
-| Primary Tools | Python, Pandas, Power BI                                     |
-| Focus Areas   | ETL, anomaly detection, operational reporting, BI enablement |
-| Business Goal | Improve rebate monitoring and reduce operational blind spots |
-| Dataset       | Fully synthetic / anonymized                                 |
-| Status        | Portfolio Case Study                                         |
+| Phase | Tools |
+|---|---|
+| Phase 1 — Original Pipeline | Python · Pandas · Microsoft Fabric · Power BI |
+| Phase 2 — Modern Stack Rebuild | Snowflake · dbt Core · Streamlit *(in progress)* |
 
 ---
 
-# Key Capabilities Demonstrated
+## Pipeline Progress
 
-* Data Engineering
-* ETL Pipeline Design
-* Medallion Architecture (Bronze / Silver / Gold)
-* Data Quality Monitoring
-* Exception Management
-* Anomaly Detection Concepts
-* Power BI Reporting
-* Business Intelligence Enablement
-* Data Governance Planning
-* Microsoft Fabric Architecture Planning
-* Business-to-Technical Translation
-* Stakeholder-Oriented Solution Design
+**Phase 1: Python + Power BI (Complete)**
+- [x] Raw dataset ingestion and profiling
+- [x] Bronze → Silver → Gold transformation in Python/Pandas
+- [x] Composite key deduplication (transaction_id + partner_id + memo + net_amount)
+- [x] Silent shop detection via anti-join
+- [x] Centralized exception table with severity classification
+- [x] Power BI dashboard — Executive Summary, Silent Shops, Anomaly Detail pages
 
----
-
-# Synthetic Data Notice
-
-All datasets included in this repository have been **synthetically regenerated** using Python-based fake data generation and custom anomaly simulation logic.
-
-No real company data, affiliate identities, financial records, or proprietary business information are included in this repository.
-
-The original case-study dataset was anonymized and replaced specifically to preserve confidentiality and eliminate exposure of any sensitive operational information.
+**Phase 2: Snowflake + dbt (In Progress)**
+- [x] Phase 1: Raw data loaded into Snowflake (`DEV_MCP_DB.PUBLIC`) via stage + COPY INTO
+- [x] Phase 2: dbt project initialized — profiles, sources, and connection verified
+- [x] Phase 3A: Staging layer — type casting, column normalization, source tests
+- [x] Phase 3B: Intermediate layer — MD5 surrogate key, window deduplication, exception typing
+- [x] Phase 3C: Marts layer — `dim_partners`, `fact_rebate_payouts`, `mart_affiliate_summary`
+- [x] 25 passing dbt tests including referential integrity and custom singular regression baseline
+- [ ] Phase 4: dbt docs + lineage graph hosted on GitHub Pages
+- [ ] Phase 5: Streamlit deployment 
 
 ---
 
-# Solution Architecture
+## Repository Structure
 
-The project follows a simplified **Medallion Architecture** approach:
-
-```text
-Distributor Files
-        ↓
-     Bronze
-   (Raw Intake)
-        ↓
-     Silver
- (Validation & Standardization)
-        ↓
-      Gold
- (Business Monitoring Outputs)
-        ↓
-    Power BI
-        ↓
- Operations & Leadership
+```
+rebate-intelligence-pipeline/
+├── rebate_transformation_layer/         # Phase 2: dbt Core project
+│   ├── models/
+│   │   ├── staging/              # Bronze — type casting, normalization
+│   │   ├── intermediate/         # Silver — deduplication, exception classification
+│   │   └── marts/                # Gold — dim_partners, fact_rebate_payouts, mart_affiliate_summary
+│   └── tests/
+│       └── assert_anomaly_regression_baseline.sql
+├── ./                     # Phase 1: Python pipeline scripts
+└── README.md
 ```
 
 ---
 
-## Bronze Layer - ELT in action.
+## Key Engineering Decisions
 
-Raw source files are preserved exactly as received._If anything fails further down the pipeline - needed data gets overwritten, business logic changes, technical failurewe we have the originsl data here as a reference. No need to request from the distibutor and potential encounter delays, or — again — that eroded trust_
+**Composite Key over Single-Column Primary Key**
+Transaction IDs are not unique — a single transaction can generate multiple rebate entries through rebate decomposition. The composite key `(transaction_id + partner_id + memo + net_amount)` treats each rebate event as its own grain, preventing valid revenue from being silently removed.
 
-This enables our team to:
+**Exception Typing over Binary Flagging**
+Rather than a simple is_error boolean, each anomalous row is classified by exception type (`zero_amount`, `null_amount`, `negative_amount`, `null_memo`, `null_partner`). This separates data quality issues from inactivity signals — a missing memo is not the same business problem as a zero-dollar transaction.
 
-* maintain auditability 
-* preserve recovery points
-* retain original distributor submissions
+**Silent Shop Classification at the Aggregate Layer**
+Silent shop status is assigned at the Gold mart level, not the row level. An affiliate is only classified as a silent shop when their entire transaction history contains zero clean, valid financial activity. This prevents cosmetic data quality flags from being misread as inactivity.
 
-Characteristics:
-
-* immutable raw ingestion
-* no transformations, just the columnar addition of a ...
-* timestamped intake logging
+**Fabric vs. Snowflake + dbt**
+The original pipeline used Microsoft Fabric — appropriate for a BI-first, small-team environment with Power BI as the single output. The Phase 2 rebuild uses Snowflake + dbt to demonstrate the composable, data-platform-first pattern appropriate for multi-team environments where transformation logic requires version control, testing, and lineage as first-class engineering concerns.
 
 ---
 
-## Silver Layer
+## Case Study & Findings
 
-The Silver layer standardizes and validates incoming data.
+Full findings — including silent shop analysis, exception classification design, and commercial impact framing — are documented on the case study site:
 
-Core transformations include:
-
-* datatype normalization
-* column standardization
-* null handling
-* duplicate handling
-* parent-child relationship resolution
-* data quality validation
-* exception logging
-* rebate monitoring logic
-
-This layer acts as the primary operational quality-control checkpoint. From here any "bad data" (as established by the business rules and logic) gets flagged and separated from the good data to avoid any interruption in data being 
+📄 **[emorain3.github.io/rebate-intelligence-pipeline-casestudy](https://emorain3.github.io/rebate-intelligence-pipeline-casestudy/)**
 
 ---
 
-## Gold Layer
+## Contact
 
-The Gold layer produces analytics-ready outputs for Power BI and operational review workflows.
+**Ecclesia Morain** — Cloud Data Engineer
 
-Outputs include:
-
-* monthly affiliate summaries
-* missing activity detection
-* rebate decline alerts
-* partner feed health metrics
-* KPI summaries
-* reconciliation concepts
-* exception narratives
-* business monitoring tables
-
-The Gold layer was designed specifically to help operations and BI teams prioritize investigation and action instead of manually searching through raw transaction files.
-
----
-
-# Example Monitoring Scenarios
-
-The monitoring framework was designed to identify:
-
-* silent affiliate locations with missing expected activity
-* abnormal rebate declines
-* duplicate transaction anomalies
-* negative-value rebate events
-* distributor feed inconsistencies
-* parent-child hierarchy mismatches
-* reconciliation gaps
-* sponsor compliance concerns
-
-Each anomaly category was intentionally tied back to potential business outcomes, including:
-
-* revenue leakage
-* missed rebates
-* operational inefficiency
-* delayed reporting
-* compliance concerns
-* reduced partner trust
-
----
-
-# Project Structure
-
-## `/scripts/bronze_to_silver.py`
-
-Transforms raw ingestion data into validated Silver-layer datasets.
-
----
-
-## `/scripts/silver_to_gold.py`
-
-Creates Gold-layer business outputs and monitoring datasets.
-
----
-
-## `/data/`
-
-Contains example Bronze, Silver, and Gold datasets.
-
----
-
-## `/power_bi/`
-
-Contains Power BI reporting assets and dashboard concepts.
-
----
-
-# Power BI & Reporting Strategy
-
-Power BI was used as the primary operational reporting and monitoring layer.
-
-The reporting strategy emphasized:
-
-* exception-driven workflows
-* operational visibility
-* affiliate health monitoring
-* executive-friendly KPI communication
-* actionable investigation queues
-
-The objective was not simply to create dashboards.
-
-The objective was to reduce the amount of time spent manually searching through raw transaction data and instead surface the records most likely to require business attention.
-
----
-
-# Why Medallion Architecture Was Chosen
-
-The Bronze → Silver → Gold structure was selected because it provides:
-
-* auditability
-* layered validation
-* recovery capability
-* scalability
-* cleaner BI consumption
-* separation of concerns
-* resilience to schema evolution
-
-This structure also supports future operational maturity without redesigning the entire pipeline.
-
-Potential future enhancements include:
-
-* automated orchestration
-* API-based ingestion
-* advanced anomaly detection
-* Microsoft Fabric migration
-* historical trend forecasting
-* automated alert routing
-* reconciliation automation
-
----
-
-# Important Note on Prototype Scope
-
-This repository represents a **rapid-development case study**, not production-hardened enterprise software.
-
-The emphasis was placed on:
-
-1. understanding the business model
-2. identifying operational risk
-3. designing scalable architecture
-4. building monitoring concepts
-5. demonstrating business-oriented engineering thinking
-
-rather than polishing every implementation detail for enterprise deployment.
-
-Additional engineering work would still be required for:
-
-* CI/CD
-* orchestration
-* automated testing
-* infrastructure hardening
-* advanced security controls
-* parameterization
-* production monitoring
-* performance optimization
-
----
-
-# AI-Assisted Development Disclosure
-
-AI-assisted development tools were used selectively to accelerate portions of the prototype ETL implementation under tight delivery timelines.
-
-Architectural decisions, business logic design, anomaly detection concepts, data modeling, reporting strategy, and operational solution framing were independently designed and validated throughout the case-study process.
-
----
-
-# How to Run the Proof of Concept
-
-## Install Requirements
-
-```bash
-pip install -r requirements.txt
-```
-
-Primary dependencies include:
-
-* pandas
-* numpy
-* openpyxl
-* pyarrow
-
----
-
-## Source Data Location
-
-```bash
-data/bronze/*.csv
-```
-
----
-
-## Run Bronze → Silver
-
-```bash
-python scripts/bronze_to_silver.py
-```
-
----
-
-## Run Silver → Gold
-
-```bash
-python scripts/silver_to_gold.py
-```
-
----
-
-## Review Outputs
-
-```bash
-data/silver/
-data/gold/
-```
-
-Optional CSV exports may also be included for easier inspection in Excel or Power BI.
-
----
-
-# Additional Case Study Materials
-
-Additional architecture walkthroughs, diagrams, dashboard screenshots, and operational analysis materials will be published through the accompanying public case study page.
-
----
-
-# Final Statement
-
-This project was built to demonstrate the ability to:
-
-* rapidly understand an unfamiliar business domain
-* structure ambiguity into actionable systems
-* connect technical implementation to business outcomes
-* design scalable data workflows
-* communicate effectively with both technical and non-technical stakeholders
-* and approach data engineering as an operational enablement function rather than simply a coding exercise.
-
-The broader goal of the project is to build systems that help organizations **trust, understand, and act on their data more effectively.**
+[LinkedIn](https://linkedin.com/in/ecclesiamorain) · [hire.ecclesia@outlook.com](mailto:hire.ecclesia@outlook.com)
