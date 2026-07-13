@@ -2,15 +2,17 @@ version: 2
 
 models:
   - name: dim_partners
-    description: "Gold dimension table consolidating the standardized partner and affiliate details."
+    description: "Gold dimension table consolidating clean, standardized partner details."
     columns:
-      - name: affiliate_id
-        description: "Primary key identifier for the affiliate location."
+      - name: partner_id
+        description: "Primary key identifier for the partner."
         tests:
           - unique
           - not_null
-      - name: affiliate_name
-        description: "Cleaned and standardized uppercase affiliate name."
+      - name: partner_name
+        description: "Cleaned and standardized partner name."
+      - name: partner_type
+        description: "The business tier or classification type of the partner."
 
   - name: fact_rebate_payouts
     description: "Gold fact table containing validated, deduplicated rebate transactions cleared of all flagged anomalies."
@@ -20,15 +22,17 @@ models:
         tests:
           - unique
           - not_null
-      - name: affiliate_id
-        description: "Primary key linking to the affiliate dimension."
-        data_tests:
-          - unique
+      - name: partner_id
+        description: "Foreign key linking the payout transaction to its verified partner dimension."
+        tests:
           - not_null
           - relationships:
-              arguments:
-                to: ref('dim_partners')  
-                field: affiliate_id     
+              to: ref('dim_partners')  
+              field: partner_id     
+      - name: affiliate_id
+        description: "Identifier for the individual affiliate location that generated the transaction."
+        tests:
+          - not_null
 
   - name: mart_affiliate_summary
     description: "Analytical summary mart evaluating transaction health and explicitly identifying silent shop entities among other anomalies."
@@ -38,5 +42,13 @@ models:
         tests:
           - unique
           - not_null
+      - name: affiliate_name
+        description: "Standardized name of the affiliate location."
+      - name: state
+        description: "Geographic state abbreviation of the affiliate."
+      - name: program_tier
+        description: "Contractual program tier assigned to the location."
+      - name: partner_name
+        description: "Associated partner name resolved via active transactions."
       - name: is_silent_shop
         description: "Flag indicating whether the location has generated zero clean transactions."
