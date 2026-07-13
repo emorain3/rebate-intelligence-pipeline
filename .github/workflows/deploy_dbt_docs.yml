@@ -21,7 +21,6 @@ jobs:
         with:
           python-version: '3.10'
 
-      # Forces the runner to execute inside your subfolder and builds the data profile
       - name: Install Dependencies & Generate Docs
         run: |
           pip install dbt-snowflake
@@ -29,13 +28,13 @@ jobs:
           dbt docs generate --profiles-dir .
         working-directory: rebate_transformation_layer
         env:
-          DBT_ENV_SECRET_ACCOUNT: ${{ secrets.DBT_ENV_SECRET_ACCOUNT }}
-          DBT_ENV_SECRET_USER: ${{ secrets.DBT_ENV_SECRET_USER }}
-          DBT_ENV_SECRET_PASSWORD: ${{ secrets.DBT_ENV_SECRET_PASSWORD }}
-          DBT_ENV_SECRET_ROLE: ${{ secrets.DBT_ENV_SECRET_ROLE }}
-          DBT_ENV_SECRET_WAREHOUSE: ${{ secrets.DBT_ENV_SECRET_WAREHOUSE }}
+          SF_ACCOUNT: ${{ secrets.SF_ACCOUNT }}
+          SF_USER: ${{ secrets.SF_USER }}
+          SF_PASSWORD: ${{ secrets.SF_PASSWORD }}
+          SF_ROLE: ${{ secrets.SF_ROLE }}
+          SF_WAREHOUSE: ${{ secrets.SF_WAREHOUSE }}
+          SF_DATABASE: ${{ secrets.SF_DATABASE }}
 
-      # Deploys the entire target directory so index.html, manifest.json, and catalog.json stay together
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
