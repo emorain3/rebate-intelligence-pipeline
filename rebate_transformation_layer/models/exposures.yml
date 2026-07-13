@@ -1,0 +1,19 @@
+# 1. Navigate to your dbt models directory (or make sure you are in your project root)
+# 2. Create the exposures.yml file inside your models directory
+version: 2
+
+exposures:
+  - name: rebate_intelligence_dashboard
+    label: "Rebate Intelligence Executive Pipeline Dashboard"
+    type: dashboard
+    maturity: high
+    url: https://share.streamlit.io/emorain3/rebate-intelligence-pipeline/main/app.py
+    description: >
+      Executive visibility dashboard surface providing reactive compliance auditing 
+      and operational metric tracking over Gold analytics marts.
+    owner:
+      name: EMORAIN3
+    depends_on:
+      - ref('dim_partners')
+      - ref('fact_rebate_payouts')
+      - ref('mart_affiliate_summary')
