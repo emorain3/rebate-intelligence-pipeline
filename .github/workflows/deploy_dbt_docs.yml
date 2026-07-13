@@ -3,7 +3,7 @@ name: Deploy dbt Docs to GitHub Pages
 on:
   push:
     branches:
-      - main # If your primary repository branch is called 'master', change 'main' to 'master'
+      - master
 
 permissions:
   contents: write
