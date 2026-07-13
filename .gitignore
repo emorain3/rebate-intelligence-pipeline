@@ -40,6 +40,9 @@ rebate_transformation_layer/target/
 rebate_transformation_layer/dbt_packages/
 rebate_transformation_layer/dbt_modules/
 
+# Ignore Streamlit auth sensitive data
+.streamlit/secrets.toml
+
 # ==========================================
 # 💻 Operating System Clutter
 # ==========================================
