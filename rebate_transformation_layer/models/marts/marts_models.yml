@@ -21,11 +21,14 @@ models:
           - unique
           - not_null
       - name: affiliate_id
-        description: "Foreign key linking back to dim_partners dimension table."
-        tests:
+        description: "Primary key linking to the affiliate dimension."
+        data_tests:
+          - unique
+          - not_null
           - relationships:
-              to: ref('dim_partners')
-              field: affiliate_id
+              arguments:
+                to: ref('dim_partners')  
+                field: affiliate_id     
 
   - name: mart_affiliate_summary
     description: "Analytical summary mart evaluating transaction health and explicitly identifying silent shop entities among other anomalies."

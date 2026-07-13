@@ -1,0 +1,78 @@
+name: Deploy dbt Docs to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # If your primary repository branch is called 'master', change 'main' to 'master'
+
+permissions:
+  contents: write
+
+jobs:
+  deploy-docs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dbt-snowflake
+        run: |
+          pip install dbt-snowflake==1.11.6
+
+      - name: Setup Runtime dbt Profile
+        run: |
+          mkdir -p ~/.dbt
+          cat << EOF > ~/.dbt/profiles.yml
+          rebate_transformation_layer:
+            target: dev
+            outputs:
+              dev:
+                type: snowflake
+                account: ${{ secrets.SF_ACCOUNT }}
+                user: ${{ secrets.SF_USER }}
+                password: ${{ secrets.SF_PASSWORD }}
+                role: ${{ secrets.SF_ROLE }}
+                database: ${{ secrets.SF_DATABASE }}
+                warehouse: ${{ secrets.SF_WAREHOUSE }}
+                schema: PUBLIC
+                threads: 4
+                client_session_keep_alive: false
+          EOF
+
+      - name: Compile dbt Documentation
+        run: |
+          cd rebate_transformation_layer
+          dbt deps
+          dbt docs generate
+
+      - name: Merge Artifacts into Single Page App
+        run: |
+          cd rebate_transformation_layer
+          mkdir -p ../public
+          
+          # Python script to inline manifest and catalog JSON structures directly into index.html
+          # This guarantees hiring managers can open your lineage map without CORS block errors
+          python -c "
+          import json
+          with open('target/index.html', 'r', encoding='utf-8') as f: html = f.read()
+          with open('target/manifest.json', 'r', encoding='utf-8') as f: manifest = json.load(f)
+          with open('target/catalog.json', 'r', encoding='utf-8') as f: catalog = json.load(f)
+          
+          html = html.replace('json/manifest.json', 'data:application/json,' + json.dumps(manifest))
+          html = html.replace('json/catalog.json', 'data:application/json,' + json.dumps(catalog))
+          
+          with open('../public/index.html', 'w', encoding='utf-8') as f: f.write(html)
+          "
+
+      - name: Deploy static assets to GitHub Pages Branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
