@@ -4,8 +4,8 @@
 
 
 
-select affiliate_id
+select partner_id
 from DEV_MCP_DB.PUBLIC.dim_partners
-where affiliate_id is null
+where partner_id is null
 
 

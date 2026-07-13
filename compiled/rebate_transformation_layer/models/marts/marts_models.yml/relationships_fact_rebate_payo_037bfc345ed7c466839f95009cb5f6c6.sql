@@ -3,13 +3,13 @@
     
 
 with child as (
-    select affiliate_id as from_field
+    select partner_id as from_field
     from DEV_MCP_DB.PUBLIC.fact_rebate_payouts
-    where affiliate_id is not null
+    where partner_id is not null
 ),
 
 parent as (
-    select affiliate_id as to_field
+    select partner_id as to_field
     from DEV_MCP_DB.PUBLIC.dim_partners
 )
 
