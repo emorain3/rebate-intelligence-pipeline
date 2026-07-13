@@ -43,8 +43,7 @@ An end-to-end data engineering portfolio project demonstrating production-grade 
 - [x] Phase 3B: Intermediate layer — MD5 surrogate key, window deduplication, exception typing
 - [x] Phase 3C: Marts layer — `dim_partners`, `fact_rebate_payouts`, `mart_affiliate_summary`
 - [x] 25 passing dbt tests including referential integrity and custom singular regression baseline
-- [ ] Phase 4: dbt docs + lineage graph hosted on GitHub Pages
-- [ ] Phase 5: Streamlit deployment 
+- [x] Phase 4: dbt docs + lineage graph hosted on GitHub Pages — **[View Lineage Graph →](https://emorain3.github.io/rebate-intelligence-pipeline/)**- [ ] Phase 5: Streamlit deployment 
 
 ---
 
