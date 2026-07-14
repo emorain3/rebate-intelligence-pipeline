@@ -24,7 +24,7 @@ An end-to-end data engineering portfolio project demonstrating production-grade 
 | Phase | Tools |
 |---|---|
 | Phase 1 — Original Pipeline | Python · Pandas · Microsoft Fabric · Power BI |
-| Phase 2 — Modern Stack Rebuild | Snowflake · dbt Core · Streamlit *(in progress)* |
+| Phase 2 — Modern Stack Rebuild | Snowflake · dbt Core · Streamlit  |
 
 ---
 
@@ -38,7 +38,7 @@ An end-to-end data engineering portfolio project demonstrating production-grade 
 - [x] Centralized exception table with severity classification
 - [x] Power BI dashboard — Executive Summary, Silent Shops, Anomaly Detail pages
 
-**Phase 2: Snowflake + dbt (In Progress)**
+**Phase 2: Snowflake + dbt + Streamlit**
 - [x] Phase 1: Raw data loaded into Snowflake (`DEV_MCP_DB.PUBLIC`) via stage + COPY INTO
 - [x] Phase 2: dbt project initialized — profiles, sources, and connection verified
 - [x] Phase 3A: Staging layer — type casting, column normalization, source tests
@@ -46,7 +46,7 @@ An end-to-end data engineering portfolio project demonstrating production-grade 
 - [x] Phase 3C: Marts layer — `dim_partners`, `fact_rebate_payouts`, `mart_affiliate_summary`
 - [x] 25 passing dbt tests including referential integrity and custom singular regression baseline
 - [x] Phase 4: dbt docs + lineage graph hosted on GitHub Pages — **[View Lineage Graph →](https://emorain3.github.io/rebate-intelligence-pipeline/)**
-- [ ] Phase 5: Streamlit deployment 
+- [x] Phase 5: Streamlit deployment  **[View Streamlit Dashboard →](https://rebate-intelligence-pipeline-dashboard.streamlit.app/)** 
 
 ---
 
